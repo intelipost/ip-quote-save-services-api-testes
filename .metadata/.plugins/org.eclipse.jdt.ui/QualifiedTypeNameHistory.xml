@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="io.restassured.http.Method"/>
+    <fullyQualifiedTypeName name="io.restassured.response.Response"/>
+    <fullyQualifiedTypeName name="io.restassured.RestAssured"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="org.junit.Test"/>
+    <fullyQualifiedTypeName name="jdk.internal.net.http.common.Log"/>
+    <fullyQualifiedTypeName name="org.hamcrest.core.IsNot"/>
+    <fullyQualifiedTypeName name="com.sun.istack.NotNull"/>
+    <fullyQualifiedTypeName name="org.hamcrest.Matchers"/>
+</qualifiedTypeNameHistroy>

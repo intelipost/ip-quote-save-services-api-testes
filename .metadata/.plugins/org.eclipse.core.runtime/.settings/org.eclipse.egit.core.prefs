@@ -1,0 +1,4 @@
+GitRepositoriesView.GitDirectories=/home/rafaelsantos/Documentos/Intelipost/secure-core/.git\:/home/rafaelsantos/Documentos/Intelipost/secure-graphql/.git\:/home/rafaelsantos/Documentos/Intelipost/ip-quote-save-services/.git\:
+GitRepositoriesView.GitDirectories.relative=/home/rafaelsantos/Documentos/Intelipost/secure-core/.git\:/home/rafaelsantos/Documentos/Intelipost/secure-graphql/.git\:/home/rafaelsantos/Documentos/Intelipost/ip-quote-save-services/.git\:
+core_autoIgnoreDerivedResources=false
+eclipse.preferences.version=1

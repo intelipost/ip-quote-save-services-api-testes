@@ -1,0 +1,79 @@
+package br.ipquoteServicesTesteAPI;
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+
+import org.junit.Test;
+
+
+
+
+public class IpQuoteServicesTestePost {
+
+
+	@Test
+	public void deveSalvarCotacaoComTodosOsParametros() {
+		
+		given()
+		
+		.log().all()
+		.contentType("application/json")
+		
+		.body("{\n"
+				+ "  \"origin_zip_code\": \"1000000\",\n"
+				+ "  \"destination_zip_code\": \"04304011\",\n"
+				+ "  \"quoting_mode\": \"DYNAMIC_BOX_ALL_ITEMS\",\n"
+				+ "  \"products\": [\n"
+				+ "    {\n"
+				+ "      \"weight\": 5,\n"
+				+ "      \"cost_of_goods\": 10.7,\n"
+				+ "      \"width\": 15,\n"
+				+ "      \"height\": 17.5,\n"
+				+ "      \"length\": 15,\n"
+				+ "      \"quantity\": 1,\n"
+				+ "      \"sku_id\": \"SKU123\",\n"
+				+ "      \"product_category\": \"Bebidas\"\n"
+				+ "    },\n"
+				+ "    {\n"
+				+ "      \"weight\": 7,\n"
+				+ "      \"cost_of_goods\": 20.99,\n"
+				+ "      \"width\": 20.5,\n"
+				+ "      \"height\": 30.7,\n"
+				+ "      \"length\": 20,\n"
+				+ "      \"quantity\": 1,\n"
+				+ "      \"sku_id\": \"SKU456\",\n"
+				+ "      \"product_category\": \"Bebidas\"\n"
+				+ "    }\n"
+				+ "  ],\n"
+				+ "  \"additional_information\": {\n"
+				+ "    \"lead_time_business_days\": 1,\n"
+				+ "    \"sales_channel\": \"meu_canal_de_vendas\",\n"
+				+ "    \"client_type\": \"gold\"\n"
+				+ "  },\n"
+				+ "  \"identification\": {\n"
+				+ "    \"session\": \"04e5bdf7ed15e571c0265c18333b6fdf1434658753\",\n"
+				+ "    \"ip\": \"000.000.000.000\",\n"
+				+ "    \"page_name\": \"carrinho\",\n"
+				+ "    \"url\": \"http://www.intelipost.com.br/checkout/cart/\"\n"
+				+ "  }\n"
+				+ "}")
+		
+	.when().post("http://localhost:8080/v2/quote/async")
+	
+	.then()
+	
+	.log().all()
+	.statusCode(202)
+	.body("id", is(notNullValue()))
+	
+	.body("identification.session", is(notNullValue()))
+	.body("identification.ip", is(notNullValue()))
+	.body("identification.pageName", is(nullValue()))
+	.body("identification.url", is("04e5bdf7ed15e571c0265c18333b6fdf1434658753"))
+
+		
+	;
+}
+
+}

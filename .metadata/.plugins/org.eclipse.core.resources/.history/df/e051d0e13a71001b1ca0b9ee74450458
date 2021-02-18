@@ -1,0 +1,12 @@
+package br.ipquoteServicesTesteAPI;
+
+public class IpQuoteServicesTesteGet {
+
+	public static void main(String[] args) {
+		
+		
+		
+
+	}
+
+}
